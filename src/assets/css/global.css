@@ -34,3 +34,7 @@ html,body,#app{
 .border-bottom{
 	border-bottom: 1px solid #eee;
 }
+
+.el-cascader-menu{
+	height: 240px;
+}
