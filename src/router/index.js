@@ -4,9 +4,10 @@ import Login from "../pages/Login.vue";
 import Home from "../pages/Home.vue";
 import Welcome from "../pages/Welcome.vue";
 import Users from "../pages/user/Users.vue";
-import Rights from '../pages/power/Rights.vue'
-import Roles from '../pages/power/Roles.vue'
-import Cate from '../pages/goods/Cate.vue'
+import Rights from "../pages/power/Rights.vue";
+import Roles from "../pages/power/Roles.vue";
+import Cate from "../pages/goods/Cate.vue";
+import Params from "../pages/goods/Params.vue";
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,7 @@ const routes = [
       { path: "/rights", component: Rights },
       { path: "/roles", component: Roles },
       { path: "/categories", component: Cate },
+      { path: "/params", component: Params },
     ],
   },
 ];
