@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		.parent {
-			background-color: blue;
-			/* overflow: hidden; */
-		}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        background-color: blue;
+        /* overflow: hidden; */
+      }
 
-		.son {
-			width: 100px;
-			height: 100px;
-			margin-top: 10px;
-			background-color: green;
-		}
-	</style>
-</head>
-<body>
-	<div class="parent">
-		<div class="son"></div>
-	</div>
-</body>
+      .son {
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="son"></div>
+    </div>
+    <script>
+      const person = {
+        isHuman: false,
+        printIntroduction: function () {
+          console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+        },
+      };
+
+      const me = Object.create(person);
+
+      me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+      me.isHuman = true; // inherited properties can be overwritten
+
+      me.printIntroduction();
+      // expected output: "My name is Matthew. Am I human? true"
+			console.log(me);
+    </script>
+  </body>
 </html>
