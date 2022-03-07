@@ -9,10 +9,21 @@ import './assets/font/iconfont.css'
 // 导入axios
 import axios from 'axios'
 axios.defaults.baseURL='https://lianghj.top:8888/api/private/v1/'
+
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
+// request拦截器
 axios.interceptors.request.use(config=>{
+  NProgress.start();
   config.headers.Authorization=window.sessionStorage.getItem('token')
   return config
 })
+axios.interceptors.response.use(config=>{
+  NProgress.done();
+  return config
+})
+
 Vue.prototype.$http=axios
 
 // 导入树形表
